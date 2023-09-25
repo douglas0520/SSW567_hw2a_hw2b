@@ -25,6 +25,18 @@ class TestTriangles(unittest.TestCase):
         
     def testEquilateralTriangles(self): 
         self.assertEqual(classifyTriangle(1,1,1),'Equilateral','1,1,1 should be equilateral')
+    
+    def testIsosceles(self):
+        self.assertEqual(classifyTriangle(3,3,4), 'isosceles', '3,3,4 is an isosceles triangle')
+
+    def testScalene(self):
+        self.assertEqual(classifyTriangle(5,7,9), 'scalene', '5,7,9 is an scalene triangle')
+
+    def testInputLimitMax(self):
+        self.assertEqual(classifyTriangle(300,78,360), 'InvalidInput_Reached_Limit', 'Input_Limit_Reached (> 200)')
+    
+    def testInputLimitMin(self):
+        self.assertEqual(classifyTriangle(-10,10,10), 'InvalidInput_Reached_Limit', 'Input_Limit_Reached (< 0)')
 
 if __name__ == '__main__':
     print('Running unit tests')
