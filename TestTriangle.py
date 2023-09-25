@@ -38,6 +38,12 @@ class TestTriangles(unittest.TestCase):
     def testInputLimitMin(self):
         self.assertEqual(classifyTriangle(-10,10,10), 'InvalidInput_Reached_Limit', 'Input_Limit_Reached (< 0)')
 
+    def testIsATriangle(self):
+        self.assertEqual(classifyTriangle(1,10,23), 'InvalidInput_Not_A_Triangle', '1,10,23 is not a triangle')
+
+    def testFloatNumbers(self):
+        self.assertEqual(classifyTriangle(1.1,2.2,3.3), 'Invalid_Input_Using_Float', 'Input = Float')
+
 if __name__ == '__main__':
     print('Running unit tests')
     unittest.main()
